@@ -3,11 +3,8 @@
   "public": true,
   "cleanUrls": true,
   "trailingSlash": false,
+  "outputDirectory": ".",
   "github": {
     "silent": true
-  },
-  "outputDirectory": ".",
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" }
-  ]
+  }
 } 

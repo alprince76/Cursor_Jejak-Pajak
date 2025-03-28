@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "serve",
-    "build": "node build.js",
+    "build": "echo \"Static site, no build required\"",
     "start": "serve"
   },
   "keywords": [
