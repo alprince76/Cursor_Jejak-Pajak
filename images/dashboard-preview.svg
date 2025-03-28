@@ -1,61 +1,99 @@
-<svg width="1000" height="500" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+<svg width="1000" height="550" viewBox="0 0 1000 550" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="1000" height="500" fill="#f6f8fc"/>
+  <rect width="1000" height="550" fill="#f6f8fc"/>
   
   <!-- Phone mockup on left side -->
-  <rect x="100" y="50" width="200" height="400" rx="20" fill="#1A1A1A"/>
-  <rect x="110" y="60" width="180" height="380" rx="15" fill="#121212"/>
-  <text x="200" y="100" font-family="Arial" font-size="16" fill="white" text-anchor="middle">[LOGO]</text>
-  <text x="200" y="130" font-family="Arial" font-size="18" fill="white" text-anchor="middle">Tax Summary</text>
-  
-  <!-- Tax items -->
-  <g fill="white" font-family="Arial">
-    <text x="130" y="170" font-size="14">Education</text>
-    <text x="250" y="170" font-size="14" text-anchor="end">IDR 200K</text>
+  <g transform="translate(120, 60)">
+    <rect x="0" y="0" width="220" height="420" rx="20" fill="#1A1A1A"/>
+    <rect x="10" y="10" width="200" height="400" rx="15" fill="#121212"/>
+    <text x="100" y="50" font-family="Arial" font-size="16" fill="white" text-anchor="middle">[LOGO]</text>
+    <text x="100" y="80" font-family="Arial" font-size="20" font-weight="bold" fill="white" text-anchor="middle">Tax Summary</text>
     
-    <text x="130" y="200" font-size="14">Healthcare</text>
-    <text x="250" y="200" font-size="14" text-anchor="end">IDR 600K</text>
+    <!-- Tax items -->
+    <g fill="white" font-family="Arial">
+      <text x="30" y="120" font-size="14" opacity="0.9">Education</text>
+      <text x="180" y="120" font-size="14" text-anchor="end" opacity="0.9">IDR 200K</text>
+      <line x1="30" y1="130" x2="180" y2="130" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      
+      <text x="30" y="160" font-size="14" opacity="0.9">Healthcare</text>
+      <text x="180" y="160" font-size="14" text-anchor="end" opacity="0.9">IDR 600K</text>
+      <line x1="30" y1="170" x2="180" y2="170" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      
+      <text x="30" y="200" font-size="14" opacity="0.9">Infrastructure</text>
+      <text x="180" y="200" font-size="14" text-anchor="end" opacity="0.9">IDR 850K</text>
+      <line x1="30" y1="210" x2="180" y2="210" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      
+      <text x="30" y="240" font-size="14" opacity="0.9">Social Welfare</text>
+      <text x="180" y="240" font-size="14" text-anchor="end" opacity="0.9">IDR 500K</text>
+      <line x1="30" y1="250" x2="180" y2="250" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    </g>
     
-    <text x="130" y="230" font-size="14">Infrastructure</text>
-    <text x="250" y="230" font-size="14" text-anchor="end">IDR 850K</text>
+    <!-- Total -->
+    <text x="100" y="300" font-family="Arial" font-size="24" font-weight="bold" fill="white" text-anchor="middle">Rp1.000.000</text>
+    <text x="100" y="325" font-family="Arial" font-size="12" fill="#aaa" text-anchor="middle">to keep a better Indonesia</text>
     
-    <text x="130" y="260" font-size="14">Social Welfare</text>
-    <text x="250" y="260" font-size="14" text-anchor="end">IDR 500K</text>
+    <!-- Dots -->
+    <g transform="translate(100, 355)">
+      <circle cx="-15" cy="0" r="4" fill="white"/>
+      <circle cx="0" cy="0" r="4" fill="rgba(255,255,255,0.3)"/>
+      <circle cx="15" cy="0" r="4" fill="rgba(255,255,255,0.3)"/>
+    </g>
+    
+    <!-- Button -->
+    <rect x="40" y="380" width="140" height="30" rx="15" fill="white"/>
+    <text x="110" y="400" font-family="Arial" font-size="12" fill="#121212" text-anchor="middle">Share Your Tax Wrapped</text>
   </g>
   
-  <!-- Total -->
-  <text x="200" y="320" font-family="Arial" font-size="18" fill="white" text-anchor="middle">Rp1.000.000</text>
-  <text x="200" y="340" font-family="Arial" font-size="12" fill="#aaa" text-anchor="middle">to keep a better Indonesia</text>
-  
-  <!-- Dots -->
-  <circle cx="185" cy="370" r="4" fill="white"/>
-  <circle cx="200" cy="370" r="4" fill="rgba(255,255,255,0.3)"/>
-  <circle cx="215" cy="370" r="4" fill="rgba(255,255,255,0.3)"/>
-  
-  <!-- Button -->
-  <rect x="130" y="390" width="140" height="30" rx="15" fill="white"/>
-  <text x="200" y="410" font-family="Arial" font-size="12" fill="#121212" text-anchor="middle">Share Your Tax Wrapped</text>
-  
-  <!-- Center play button -->
-  <circle cx="500" cy="250" r="50" fill="#3B82F6"/>
-  <polygon points="490,230 490,270 520,250" fill="white"/>
+  <!-- Center play button with ripple effect -->
+  <g transform="translate(500, 275)">
+    <circle cx="0" cy="0" r="80" fill="rgba(59, 130, 246, 0.1)"/>
+    <circle cx="0" cy="0" r="60" fill="rgba(59, 130, 246, 0.2)"/>
+    <circle cx="0" cy="0" r="40" fill="#3B82F6"/>
+    <polygon points="-10,-20 -10,20 20,0" fill="white"/>
+  </g>
   
   <!-- Cards on right side -->
   <g>
+    <!-- Education card -->
+    <g transform="translate(650, 100)">
+      <rect x="0" y="0" width="250" height="150" rx="10" fill="#FF6B8B" opacity="0.9"/>
+      <text x="20" y="40" font-family="Arial" font-size="22" font-weight="bold" fill="white">Education</text>
+      <text x="20" y="70" font-family="Arial" font-size="12" fill="white">Your taxes helped build</text>
+      <text x="20" y="90" font-family="Arial" font-size="12" fill="white">schools and improve education</text>
+      <rect x="20" y="110" width="100" height="30" rx="15" fill="white"/>
+      <text x="70" y="130" font-family="Arial" font-size="12" fill="#FF6B8B" text-anchor="middle">See Detail</text>
+    </g>
+    
+    <!-- Infrastructure 2025 card -->
+    <g transform="translate(650, 280)">
+      <rect x="0" y="0" width="250" height="170" rx="10" fill="#F3F4F6"/>
+      <text x="20" y="40" font-family="Arial" font-size="22" font-weight="bold" fill="#374151">Infrastructure in</text>
+      <text x="20" y="80" font-family="Arial" font-size="36" font-weight="bold" fill="#10B981">2025</text>
+      <rect x="20" y="120" width="100" height="30" rx="15" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+      <text x="70" y="140" font-family="Arial" font-size="12" fill="#374151" text-anchor="middle">See Detail</text>
+    </g>
+  </g>
+  
+  <!-- Cards on bottom -->
+  <g>
     <!-- Healthcare card -->
-    <rect x="600" y="100" width="250" height="150" rx="10" fill="#10B981" opacity="0.8"/>
-    <text x="620" y="130" font-family="Arial" font-size="18" fill="white">Healthcare</text>
-    <text x="620" y="160" font-family="Arial" font-size="12" fill="white">Your taxes provided medical</text>
-    <text x="620" y="180" font-family="Arial" font-size="12" fill="white">supplies and improved healthcare</text>
-    <rect x="620" y="200" width="100" height="30" rx="15" fill="white"/>
-    <text x="670" y="220" font-family="Arial" font-size="12" fill="#10B981" text-anchor="middle">See Detail</text>
+    <g transform="translate(350, 380)">
+      <rect x="0" y="0" width="230" height="150" rx="10" fill="#1EBEA5" opacity="0.9"/>
+      <text x="20" y="40" font-family="Arial" font-size="22" font-weight="bold" fill="white">Healthcare</text>
+      <text x="20" y="70" font-family="Arial" font-size="12" fill="white">Your taxes provided medical supplies</text>
+      <text x="20" y="90" font-family="Arial" font-size="12" fill="white">and improved healthcare services</text>
+      <rect x="20" y="110" width="100" height="30" rx="15" fill="white"/>
+      <text x="70" y="130" font-family="Arial" font-size="12" fill="#1EBEA5" text-anchor="middle">See Detail</text>
+    </g>
     
     <!-- Infrastructure card -->
-    <rect x="600" y="270" width="250" height="150" rx="10" fill="#6366F1" opacity="0.8"/>
-    <text x="620" y="300" font-family="Arial" font-size="18" fill="white">Infrastructure</text>
-    <text x="620" y="330" font-family="Arial" font-size="12" fill="white">Your contribution helped build</text>
-    <text x="620" y="350" font-family="Arial" font-size="12" fill="white">roads, bridges, and public facilities</text>
-    <rect x="620" y="370" width="100" height="30" rx="15" fill="white"/>
-    <text x="670" y="390" font-family="Arial" font-size="12" fill="#6366F1" text-anchor="middle">See Detail</text>
+    <g transform="translate(600, 380)">
+      <rect x="0" y="0" width="230" height="150" rx="10" fill="#8B5CF6" opacity="0.9"/>
+      <text x="20" y="40" font-family="Arial" font-size="22" font-weight="bold" fill="white">Infrastructure</text>
+      <text x="20" y="70" font-family="Arial" font-size="12" fill="white">Your contribution helped build roads,</text>
+      <text x="20" y="90" font-family="Arial" font-size="12" fill="white">bridges, and public facilities</text>
+      <rect x="20" y="110" width="100" height="30" rx="15" fill="white"/>
+      <text x="70" y="130" font-family="Arial" font-size="12" fill="#8B5CF6" text-anchor="middle">See Detail</text>
+    </g>
   </g>
 </svg> 
