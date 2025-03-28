@@ -1,0 +1,22 @@
+{
+  "name": "jejak-pajak-landing",
+  "version": "1.0.0",
+  "description": "Platform Jejak-Pajak landing page",
+  "main": "index.html",
+  "scripts": {
+    "dev": "serve",
+    "build": "node build.js",
+    "start": "serve"
+  },
+  "keywords": [
+    "tax",
+    "pajak",
+    "indonesia",
+    "landing-page"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}

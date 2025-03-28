@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jejak Pajak - Personalisasi Cerita Pajak</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            width: 100%;
+            max-width: 680px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .form-icon {
+            width: 48px;
+            height: 48px;
+            background: #F5F7FF;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+        }
+
+        .form-icon svg {
+            width: 24px;
+            height: 24px;
+            color: #0F1753;
+        }
+
+        .close-button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .close-button svg {
+            width: 24px;
+            height: 24px;
+            color: #666;
+        }
+
+        h1 {
+            color: #0F1753;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            color: #0F1753;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .required {
+            color: #FF4B55;
+        }
+
+        .form-hint {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #1F2937;
+            transition: border-color 0.3s;
+        }
+
+        .form-input::placeholder {
+            color: #9CA3AF;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #0F1753;
+        }
+
+        .radio-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .radio-option {
+            position: relative;
+        }
+
+        .radio-input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .radio-label {
+            display: block;
+            padding: 12px 16px;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            color: #1F2937;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .radio-input:checked + .radio-label {
+            border-color: #0F1753;
+            background-color: #F5F7FF;
+        }
+
+        .vehicle-group {
+            margin-top: 16px;
+        }
+
+        .vehicle-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .checkbox-input {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #E5E7EB;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .vehicle-input {
+            flex: 1;
+        }
+
+        .amount-input {
+            width: 200px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .action-button {
+            padding: 8px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #0F1753;
+        }
+
+        .calculate-button {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background-color: #0F1753;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .calculate-button:hover {
+            background-color: #1a237e;
+        }
+
+        @media (max-width: 640px) {
+            .form-card {
+                padding: 24px;
+            }
+
+            .radio-group {
+                grid-template-columns: 1fr;
+            }
+
+            .vehicle-item {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+
+            .amount-input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-card">
+        <div class="form-header">
+            <div class="form-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+            </div>
+            <div>
+                <h1>Yuk, Personalisasi Cerita Pajak Kamu</h1>
+                <p class="subtitle">Jawab beberapa pertanyaan ini biar kami bisa kasih gambaran gimana gaya hidup kamu berkontribusi lewat pajak.</p>
+            </div>
+            <button class="close-button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <form id="tax-form">
+            <div class="form-group">
+                <label class="form-label">Apa nama panggilan kamu?</label>
+                <div class="form-hint">(bisa anonim, ya)</div>
+                <input type="text" class="form-input" placeholder="cth. Anonymous Hero">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Berapa penghasilan kamu per bulan (net)?<span class="required">*</span></label>
+                <input type="text" class="form-input" placeholder="Rp 7,000,000" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Rata-rata uang yang kamu habiskan per bulan?<span class="required">*</span></label>
+                <input type="text" class="form-input" placeholder="Rp 5,500,000" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Kamu tinggal di tempat tipe apa?<span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" name="housing" id="own-house" class="radio-input" required>
+                        <label for="own-house" class="radio-label">Rumah Pribadi</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="housing" id="rent-house" class="radio-input">
+                        <label for="rent-house" class="radio-label">Rumah kontrakan</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="housing" id="office-house" class="radio-input">
+                        <label for="office-house" class="radio-label">Rumah dinas</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="housing" id="boarding" class="radio-input">
+                        <label for="boarding" class="radio-label">Kos/boarding</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Kendaraan yang kamu pakai apa? Dan berapa pengeluaran bulanannya? (bensi, maintenance, dll)<span class="required">*</span></label>
+                <div class="vehicle-group">
+                    <div class="vehicle-item">
+                        <input type="checkbox" class="checkbox-input">
+                        <input type="text" class="form-input vehicle-input" placeholder="Motor">
+                        <div class="action-buttons">
+                            <button type="button" class="action-button">+</button>
+                            <button type="button" class="action-button">−</button>
+                        </div>
+                        <input type="text" class="form-input amount-input" placeholder="Rp 0">
+                    </div>
+                    <div class="vehicle-item">
+                        <input type="checkbox" class="checkbox-input">
+                        <input type="text" class="form-input vehicle-input" placeholder="Mobil">
+                        <div class="action-buttons">
+                            <button type="button" class="action-button">+</button>
+                            <button type="button" class="action-button">−</button>
+                        </div>
+                        <input type="text" class="form-input amount-input" placeholder="Rp 0">
+                    </div>
+                    <div class="vehicle-item">
+                        <input type="checkbox" class="checkbox-input">
+                        <input type="text" class="form-input vehicle-input" placeholder="Tanpa kendaraan pribadi" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="calculate-button">Kalkulasi Potensi Pajak Saya</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('tax-form');
+            const closeButton = document.querySelector('.close-button');
+
+            closeButton.addEventListener('click', function() {
+                window.location.href = 'index.html';
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Navigate to the tax summary page
+                window.location.href = 'tax-summary.html';
+            });
+        });
+    </script>
+</body>
+</html> 
