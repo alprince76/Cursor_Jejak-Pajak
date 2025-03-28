@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "buildCommand": false,
+  "buildCommand": null,
   "devCommand": "serve",
   "outputDirectory": ".",
-  "installCommand": false,
+  "installCommand": null,
   "framework": null,
   "public": true,
   "cleanUrls": true
