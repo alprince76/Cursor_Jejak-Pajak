@@ -1,0 +1,17 @@
+{
+  "name": "jejak-pajak-landing",
+  "version": "1.0.0",
+  "description": "Platform Jejak-Pajak landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve",
+    "build": "echo 'No build step required'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "github": {
+    "silent": true
+  },
+  "rewrites": [
+    { "source": "/", "destination": "/home.html" }
+  ],
+  "redirects": [
+    { "source": "/index.html", "destination": "/home.html", "permanent": true }
+  ]
+} 
