@@ -1,14 +1,10 @@
 {
   "version": 2,
-  "public": true,
-  "cleanUrls": true,
-  "trailingSlash": false,
+  "buildCommand": false,
+  "devCommand": "serve",
   "outputDirectory": ".",
-  "github": {
-    "silent": true
-  },
-  "routes": [
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/(.*)", "dest": "/$1" }
-  ]
+  "installCommand": false,
+  "framework": null,
+  "public": true,
+  "cleanUrls": true
 } 
